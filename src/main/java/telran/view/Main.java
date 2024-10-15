@@ -40,8 +40,8 @@ public class Main {
         io.writeLine(empl);
     }
        static  void readEmployeeBySeparateFields() {
-        io.writeLine("\n");2
-        
+        io.writeLine("\n");
+
         long id = io.readNumberRange(String.format("Enter ID value in the range [%d-%d]", MIN_ID, MAX_ID),
         "Wrong ID value", MIN_ID, MAX_ID).longValue();
         String name = io.readStringPredicate("Enter employee's name",
