@@ -9,8 +9,9 @@ public class Menu implements Item {
     private String symbol = "_";
     private int nSymbols = 15;
     
-    public Menu(Item...items){
+    public Menu(String name, Item...items){
         this.items = Arrays.copyOf(items, items.length);
+        this.name = name;
     }
     public void setSymbol(String symbol) {
         this.symbol = symbol;
@@ -45,6 +46,7 @@ public class Menu implements Item {
        IntStream.range(0, items.length).forEach(i -> io.writeLine(String.format("%d. %s",i + 1, items[i].displayName())));
     }
     private void displayTitle(InputOutput io) {
+        io.writeLine("\n");
         io.writeString(symbol.repeat(nSymbols));
         io.writeString(name);
         io.writeLine(symbol.repeat(nSymbols));
